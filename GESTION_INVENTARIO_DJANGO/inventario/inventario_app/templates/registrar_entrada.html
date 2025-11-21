@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Registrar Entrada de Productos</h4>
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">Producto</label>
+                        {{ form.producto }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Cantidad</label>
+                        {{ form.cantidad }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Observación</label>
+                        {{ form.observacion }}
+                    </div>
+
+                    <button class="btn btn-success w-100 mt-2" type="submit">Registrar Entrada</button>
+                    <a href="/" class="btn btn-secondary w-100 mt-2">Cancelar</a>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
